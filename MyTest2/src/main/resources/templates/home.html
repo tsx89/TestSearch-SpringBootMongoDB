@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<title>MongoDB/Spring Boot tutorial from tests4geeks.com</title>
+		<style>
+			table, th, td {
+			   border: 1px solid black;
+			   border-spacing: 0px;
+			}
+			th, td {
+				padding: 10px;
+			}
+		</style>
+	</head>
+	<body>
+
+	<br />
+
+	<h2>Search by Address </h2>
+	<form action="/search" method="POST">
+		Street Number(*):
+		<input type="text" name="searchNo" id="searchNo" th:value="${searchNo}" />
+		Street Name(*):
+		<input type="text" name="searchName" id="searchName" th:value="${searchName}" />
+		Municipality:
+		<input type="text" name="searchCity" id="searchCity" th:value="${searchCity}" />
+		Post Code:
+		<input type="text" name="searchPostCode" id="searchPostCode" th:value="${searchPostCode}" />
+		<input type="submit" value="Search" />
+	</form>
+
+	<br />
+	<h2>Search Results</h2>
+	<table>
+		<thead>
+		<tr>
+			<th>Street No</th>
+			<th>Street Name</th>
+			<th>Municipality</th>
+			<th>Post Code</th>
+			<th>Source System</th>
+			<th>Transaction Id</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr th:each="entity : ${entityList}">
+			<td th:text="${entity.STREET_NO}"></td>
+			<td th:text="${entity.STREET_NAME}"></td>
+			<td th:text="${entity.POSTAL_MUNICIPALITY_NAME}"></td>
+			<td th:text="${entity.POSTAL_CODE}"></td>
+			<td th:text="${entity.SOURCE_SYSTEM}"></td>
+			<td th:text="${entity.SOURCE_UNIQUE_ID}"></td>
+		</tr>
+		</tbody>
+	</table>
+	</body>
+</html>
