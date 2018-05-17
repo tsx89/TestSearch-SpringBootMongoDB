@@ -17,9 +17,9 @@
 
 	<h2>Search by Address </h2>
 	<form action="/search" method="POST">
-		Street Number(*):
+		Street Number:
 		<input type="text" name="searchNo" id="searchNo" th:value="${searchNo}" />
-		Street Name(*):
+		Street Name:
 		<input type="text" name="searchName" id="searchName" th:value="${searchName}" />
 		Municipality:
 		<input type="text" name="searchCity" id="searchCity" th:value="${searchCity}" />
@@ -45,7 +45,7 @@
 		<tr th:each="entity : ${entityList}">
 			<td th:text="${entity.STREET_NO}"></td>
 			<td th:text="${entity.STREET_NAME}"></td>
-			<td th:text="${entity.POSTAL_MUNICIPALITY_NAME}"></td>
+			<td th:text="${entity.UPPER_TIER_MUNICIPALITY}"></td>
 			<td th:text="${entity.POSTAL_CODE}"></td>
 			<td th:text="${entity.SOURCE_SYSTEM}"></td>
 			<td th:text="${entity.SOURCE_UNIQUE_ID}"></td>

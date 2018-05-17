@@ -11,7 +11,7 @@ public class Entity {
 
     private String STREET_NAME;
 
-    private String POSTAL_MUNICIPALITY_NAME;
+    private String UPPER_TIER_MUNICIPALITY;
 
     private String POSTAL_CODE;
 
@@ -30,8 +30,8 @@ public class Entity {
         return STREET_NAME;
     }
 
-    public String getPOSTAL_MUNICIPALITY_NAME() {
-        return POSTAL_MUNICIPALITY_NAME;
+    public String getUPPER_TIER_MUNICIPALITY() {
+        return UPPER_TIER_MUNICIPALITY;
     }
 
     public String getPOSTAL_CODE() {
